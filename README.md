@@ -29,3 +29,10 @@ Download program...からlcdfill.elf選んでPC:1C000000に書き換えてRun
 ### Run
 HJ-LINK/USB Debugger for SH7262起動  
 Download program...からuarttext.elf選んでPC:1C000000に書き換えてRun  
+
+## uartecho(UARTエコーバック)
+### Build
+    docker run --rm -it -vC:\test\sh7262_an\uartecho:/workspace sh-tools/make
+### Run
+HJ-LINK/USB Debugger for SH7262起動  
+Download program...からuartecho.elf選んでPC:1C000000に書き換えてRun  
