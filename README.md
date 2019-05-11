@@ -43,3 +43,10 @@ Download program...からuartecho.elf選んでPC:1C000000に書き換えてRun
 ### Run
 HJ-LINK/USB Debugger for SH7262起動  
 Download program...からspiromid.elf選んでPC:1C000000に書き換えてRun  
+
+## sdcardfat(SDカード FATリード)
+### Build
+    docker run --rm -it -vC:\test\sh7262_an\sdcardfat:/workspace sh-tools/make
+### Run
+HJ-LINK/USB Debugger for SH7262起動  
+Download program...からsdcardfat.elf選んでPC:1C000000に書き換えてRun  
