@@ -50,3 +50,10 @@ Download program...からspiromid.elf選んでPC:1C000000に書き換えてRun
 ### Run
 HJ-LINK/USB Debugger for SH7262起動  
 Download program...からsdcardfat.elf選んでPC:1C000000に書き換えてRun  
+
+## irrcv(IR受信)
+### Build
+    docker run --rm -it -vC:\test\sh7262_an\irrcv:/workspace sh-tools/make
+### Run
+HJ-LINK/USB Debugger for SH7262起動  
+Download program...からirrcv.elf選んでPC:1C000000に書き換えてRun  
