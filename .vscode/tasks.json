@@ -1,0 +1,19 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make blink",
+            "type": "shell",
+            "command": "docker",
+            "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\blink:/workspace", "sh-tools/make"]
+        },
+        {
+            "label": "make irrcv",
+            "type": "shell",
+            "command": "docker",
+            "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\irrcv:/workspace", "sh-tools/make"]
+        }
+    ]
+}
