@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug the target via H-UDI",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/workspace/blink/blink.elf",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "/workspace",
+            "environment": [],
+            "externalConsole": true,
+            "pipeTransport": {
+                "pipeCwd": "/workspace",
+                "pipeProgram": "docker.exe",
+                "pipeArgs": ["exec","-i","debug_sh","sh","-c"],
+                "debuggerPath": "/usr/local/sh-tools/bin/sh-elf-gdb -x gdb_hudi.cmd blink/blink.elf"
+            },
+            "MIMode": "gdb",
+            //"miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "gdb の再フォーマットを有効にする",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "prelaunch gdb(HUDI)",
+            "postDebugTask": "postdebug gdb(HUDI)",
+            "sourceFileMap": {
+                "/workspace": "${workspaceFolder}/blink"
+            }
+        }
+    ]
+}

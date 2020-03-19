@@ -14,6 +14,16 @@
             "type": "shell",
             "command": "docker",
             "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\irrcv:/workspace", "sh-tools/make:gcc-3.4.5"]
+        },
+        {
+            "label": "prelaunch gdb(HUDI)",
+            "type": "shell",
+            "command": "docker run --privileged -v${workspaceFolder}:/workspace --name debug_sh -i -d --entrypoint=/bin/sh sh-tools/gdb"
+        },
+        {
+            "label": "postdebug gdb(HUDI)",
+            "type": "shell",
+            "command": "docker ps -a -f \"name=debug_sh\" -q | % { docker kill $_ }; docker ps -a -f \"name=debug_sh\" -q | % { docker rm $_ }"
         }
     ]
 }
