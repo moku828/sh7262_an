@@ -6,6 +6,16 @@
 	.space  65536
 stack_base:
 
+.section .vector, "ax"
+vector_table:
+	.long start
+	.long stack_base
+	.long start
+	.long stack_base
+	.space 16
+	.long vector_table
+	.space 1216
+
 .section .text, "ax"
 
 start:

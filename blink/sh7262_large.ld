@@ -14,6 +14,7 @@ SECTIONS
 {
   .text :
   {
+	*(.vector)		/* Vector table */
 	*(.text .text.*)	/* Program code */
 	*(.rodata)		/* Read-only data (constants) */
 	*(.rodata*)
