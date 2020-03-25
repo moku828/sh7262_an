@@ -10,6 +10,12 @@
             "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\blink:/workspace", "sh-tools/make:gcc-3.4.5"]
         },
         {
+            "label": "build sdimage",
+            "type": "shell",
+            "command": "C:\\Users\\basas\\source\\repos\\SDImageBuilder\\SDImageBuilder\\bin\\Debug\\SDImageBuilder.exe",
+            "args": ["C:\\test\\sdroot", "C:\\test\\sd.img"]
+        },
+        {
             "label": "make irrcv",
             "type": "shell",
             "command": "docker",
