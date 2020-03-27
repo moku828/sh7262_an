@@ -10,6 +10,12 @@
             "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\blink:/workspace", "sh-tools/make:gcc-3.4.5"]
         },
         {
+            "label": "copy blink.bin to sdroot as app.bin",
+            "type": "shell",
+            "command": "copy",
+            "args": ["${workspaceFolder}\\blink\\blink.bin", "C:\\test\\sdroot\\app.bin"]
+        },
+        {
             "label": "build sdimage",
             "type": "shell",
             "command": "C:\\Users\\basas\\source\\repos\\SDImageBuilder\\SDImageBuilder\\bin\\Debug\\SDImageBuilder.exe",
