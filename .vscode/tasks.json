@@ -34,6 +34,12 @@
             "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\irrcv:/workspace", "sh-tools/make:gcc-3.4.5"]
         },
         {
+            "label": "make irrcvirq",
+            "type": "shell",
+            "command": "docker",
+            "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\irrcvirq:/workspace", "sh-tools/make:gcc-3.4.5"]
+        },
+        {
             "label": "terminal monitor",
             "type": "shell",
             "command": "sleep 3; Start-Process -FilePath telnet -ArgumentList 127.0.0.1,1201 -WindowStyle Minimized"
