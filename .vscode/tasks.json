@@ -22,6 +22,12 @@
             "args": ["C:\\test\\sdroot", "C:\\test\\sd.img"]
         },
         {
+            "label": "make blinkcmt",
+            "type": "shell",
+            "command": "docker",
+            "args": ["run", "--rm", "-it", "-vC:\\test\\sh7262_an\\blinkcmt:/workspace", "sh-tools/make:gcc-3.4.5"]
+        },
+        {
             "label": "make irrcv",
             "type": "shell",
             "command": "docker",
