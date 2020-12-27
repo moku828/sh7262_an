@@ -1,6 +1,6 @@
-#define	PFCR1	*((volatile short *)0xFFFE38AC)
-#define	PFIOR0	*((volatile short *)0xFFFE38B2)
-#define	PFDR0	*((volatile short *)0xFFFE38B6)
+#define	PECR0	*((volatile short *)0xFFFE388E)
+#define	PEIOR0	*((volatile short *)0xFFFE3892)
+#define	PEPR0	*((volatile short *)0xFFFE389A)
 #define	STBCR7	*((volatile char  *)0xFFFE0418)
 #define	CMSTR	*((volatile short *)0xFFFEC000)
 #define	CMCSR_1	*((volatile short *)0xFFFEC008)
@@ -34,7 +34,7 @@ void __attribute__((interrupt_handler)) isr_cmi1()
 		return;
 	}
 	
-	if (PFDR0 & 0x0040)
+	if (PEPR0 & 0x0001)
 	{
 		if (idx == 0)
 		{
@@ -105,8 +105,8 @@ int main()
 	}
 	set_imask(14);
 	IPR10 = (IPR10 & ~0x000F) | 0x000F;
-	PFCR1 &= ~0x0700;
-	PFIOR0 &= ~0x0040;
+	PECR0 &= ~0x0003;
+	PEIOR0 &= ~0x0001;
 	STBCR7 &= ~0x04;
 	CMCSR_1 = (CMCSR_1 & ~0x0043) | 0x0041;
 	CMCOR_1 = 0x00D2;
